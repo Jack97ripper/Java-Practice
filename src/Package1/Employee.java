@@ -36,17 +36,19 @@ class Employee {
         return average;
     }
 
-    public void performance(){
+    public String performance(){
         int average = averageScore();
+        String perf;
         if(average>=90){
-            System.out.println("Excellent");
+            perf="Excellent";
         } else if(average>=75) {
-            System.out.println("Good");
+            perf="Good";
         } else if(average>=60){
-            System.out.println("Average");
+            perf="average";
         } else {
-            System.out.println("Needs Improvement");
+            perf="Needs Improvement";
         }
+        return perf;
     }
 
 public static void main(String[] args){
@@ -62,8 +64,8 @@ public static void main(String[] args){
         int highestAvg=0;
         Employee topPerformer =null;
         for(int i=0; i< employee.length;i++){
-            System.out.println("Employee: "+employee[i].getEmployeeName() + "\nAverage: "+employee[i].averageScore()+"\nPerformance: ");
-            employee[i].performance();
+            System.out.println("Employee: "+employee[i].getEmployeeName() + "\nAverage: "+employee[i].averageScore()+"\nPerformance: "+employee[i].performance());
+
             if(employee[i].averageScore() > highestAvg){
                 highestAvg=employee[i].averageScore();
                 topPerformer=employee[i];
