@@ -26,7 +26,7 @@ class ChromeBrowser extends Browser{
         super(browserName);
         this.testResults=testResults.clone();
     }
-
+    @Override
     void executeTest(){
         int countPass=0;
         for(int i=0;i<testResults.length;i++){
